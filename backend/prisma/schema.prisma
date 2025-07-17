@@ -213,7 +213,8 @@ model Swaps {
   endOn          DateTime?
   tradeRequestId Int      @unique
   statusId       Int
-
+  isActive       Boolean
+  
   tradeRequest TradeRequests @relation(fields: [tradeRequestId], references: [id])
   status       SwapStatuses  @relation(fields: [statusId], references: [id])
   reviews      Reviews[]
